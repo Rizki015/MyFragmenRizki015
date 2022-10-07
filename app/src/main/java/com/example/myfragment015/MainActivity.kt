@@ -1,0 +1,27 @@
+package com.example.myfragment015
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.PersistableBundle
+import android.widget.Button
+
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate (savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val btnFragment = findViewById<Button>(R.id.btnFragment)
+
+        btnFragment.setOnClickListener {
+            val myFragment = MyFragment ()
+            val fm = supportFragmentManager
+            val ft = fm.beginTransaction()
+            ft.replace(R.id.fragment, myFragment )
+            ft.commit()
+        }
+    }
+}
+
+
+
